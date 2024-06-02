@@ -9,7 +9,7 @@ A dockerized version of [AltServer-Linux](https://github.com/NyaMisty/AltServer-
 To start up the application, just get the binaries (AltServer, netmuxd and anisette-server binaries) and run the docker-compose stack:
 
 ```shell
-docker-compose up -d
+docker-compose up -d --build
 ```
 
 ### Using `docker run`
