@@ -31,8 +31,7 @@ sudo docker run -d \
   --name altserver \
   --network host \
   --privileged \
-  altserver-docker && \
-docker logs -f altserver
+  altserver-docker 
 ```
 
 ## Logs
