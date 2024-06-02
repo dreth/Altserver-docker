@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  altserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: altserver
+    volumes:
+      - "./lib:/root/.config/Provision/lib"
+      - "./bin:/altserver/bin"
+      - "./logs:/altserver/logs"
+      - "/dev/bus/usb:/dev/bus/usb"
+      - "/var/lib/lockdown:/var/lib/lockdown"
+      - "/var/run:/var/run"
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    network_mode: host
+    privileged: true
+    restart: unless-stopped
