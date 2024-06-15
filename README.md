@@ -42,6 +42,16 @@ Logs will be stored in the directory where the container is ran inside `./logs`
 
 Provision automatically pulls the libraries it requires (libCoreADI.so and libstoreservicescore.so) from the apple music android apk, but this requires a 60+MB download it does automatically, so I decided to include these in the root of the repo already and have the `docker-entrypoint.sh` decompress them where Provision normally would. This is optional and can be removed/commented from the `docker-entrypoint.sh` if you prefer to have Provision download and pull them from the apk.
 
+## Updating lib.tar.xz
+
+To update lib.tar.xz just run:
+
+```shell
+bash scripts/provision-deps-manual-download.sh
+```
+
+from the root of the repo.
+
 ## Credits
 
 I authored this repo but I did NOT author the projects it depends on. In particular:
