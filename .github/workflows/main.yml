@@ -19,3 +19,6 @@ jobs:
 
       - name: Build container image
         run: docker build -t altserver:latest .
+
+      - name: run container
+        run: bash run.sh
