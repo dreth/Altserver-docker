@@ -1,6 +1,6 @@
 # Altserver-docker
 
-A dockerized version of [AltServer-Linux](https://github.com/NyaMisty/AltServer-Linux) for self-hosted environments.
+A dockerized version of [AltServer-Linux](https://github.com/NyaMisty/AltServer-Linux) with Wi-Fi sync capability. 
 
 ## Run the server
 
