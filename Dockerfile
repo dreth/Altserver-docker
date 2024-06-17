@@ -26,7 +26,6 @@ RUN apt-get update && apt-get install -y \
 
 # Copy the altserver directory to the container
 COPY scripts /altserver/scripts
-COPY bin /altserver/bin
 COPY lib.tar.xz /altserver/lib.tar.xz
 
 # Make the scripts executable
