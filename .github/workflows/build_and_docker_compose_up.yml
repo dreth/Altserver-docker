@@ -1,4 +1,4 @@
-name: Build container image and bring up the docker compose stack
+name: docker compose up -d --build
 
 on:
   push:
