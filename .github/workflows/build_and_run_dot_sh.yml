@@ -1,4 +1,4 @@
-name: Build container image and execute run.sh
+name: build + run.sh
 
 on:
   push:
