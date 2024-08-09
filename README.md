@@ -4,6 +4,13 @@ A dockerized version of [AltServer-Linux](https://github.com/NyaMisty/AltServer-
 
 ## Run the server
 
+### prerequisites
+
+The only dependency is docker, but it is important to note two things:
+
+- You might not be able to refresh apps if **usbmuxd** is running in the _host_ system, the docker guest already includes it and binds to the usb interface. Make sure your host system is **NOT** running it.
+- You might need to be running the **avahi-daemon** in the host system.
+
 ### docker compose
 
 To start up the application, run the docker-compose stack:
