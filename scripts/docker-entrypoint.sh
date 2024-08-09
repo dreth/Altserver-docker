@@ -26,6 +26,11 @@ mkdir -p /root/.config/Provision
 # Detect the system architecture
 ARCH=$(uname -m)
 
+# in case of aarch64, map it to arm64-v8a
+if [ "$ARCH" = "aarch64" ]; then
+    ARCH="arm64-v8a"
+fi
+
 # Map the architecture directly
 ARCH_DIR="lib/${ARCH}"
 
