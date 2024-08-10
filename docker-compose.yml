@@ -15,5 +15,11 @@ services:
       - "/var/run:/var/run"
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     network_mode: host
+    # Optional environment variables to override the default architecture
+    # for the altserver, netmuxd, and anisette binaries.
+    # environment:
+    #   - OVERRIDE_ALTSERVER_ARCH=x86_64
+    #   - OVERRIDE_NETMUXD_ARCH=x86_64
+    #   - OVERRIDE_ANISETTE_ARCH=x86_64
     privileged: true
     restart: unless-stopped

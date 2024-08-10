@@ -45,6 +45,31 @@ sudo docker run -d \
 
 Logs will be stored in the directory where the container is ran inside `./logs`
 
+## Optional environment variables
+
+It's possible to override which architecture of altserver, netmuxd and anisette-server are downloaded by setting the following environment variables in the docker compose file:
+
+```yaml
+  environment:
+    - OVERRIDE_ALTSERVER_ARCH=x86_64
+    - OVERRIDE_NETMUXD_ARCH=x86_64
+    - OVERRIDE_ANISETTE_ARCH=x86_64
+```
+
+or alternatively adding them in the `docker run` command before the image name:
+
+```shell
+  -e OVERRIDE_ALTSERVER_ARCH=x86_64 \
+  -e OVERRIDE_NETMUXD_ARCH=x86_64 \
+  -e OVERRIDE_ANISETTE_ARCH=x86_64 \
+```
+
+You can check for which architectures are available by checking the releases of each project:
+
+- [AltServer-Linux](https://github.com/NyaMisty/AltServer-Linux/releases)
+- [netmuxd](https://https://github.com/jkcoxson/netmuxd/releases)
+- [Provision](https://github.com/Dadoum/Provision/releases) (this is the anisette-server)
+
 ## Provision libraries
 
 Provision automatically pulls the libraries it requires (libCoreADI.so and libstoreservicescore.so) from the apple music android apk, but this requires a 60+MB download it does automatically, so I decided to include these in the root of the repo already and have the `docker-entrypoint.sh` decompress them where Provision normally would. This is optional and can be removed/commented from the `docker-entrypoint.sh` if you prefer to have Provision download and pull them from the apk.
