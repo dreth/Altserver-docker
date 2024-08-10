@@ -21,5 +21,7 @@ services:
     #   - OVERRIDE_ALTSERVER_ARCH=x86_64
     #   - OVERRIDE_NETMUXD_ARCH=x86_64
     #   - OVERRIDE_ANISETTE_ARCH=x86_64
+    #   - OVERRIDE_PROVISION_LIBS_ARCH=x86_64
+    #   - ALLOW_PROVISION_TO_DOWNLOAD_LIBS=true
     privileged: true
     restart: unless-stopped

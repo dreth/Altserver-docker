@@ -17,26 +17,25 @@ echo "Purging logs..."
 rm -rf /altserver/logs/*
 
 # Decompressing required libs for Provision
-# --- COMMENT THIS BLOCK IF YOU'D RATHER HAVE ANISETTE PULL AND EXTRACT THE LIBS
-echo "Decompressing required libs for Provision..."
+# if ALLOW_PROVISION_TO_DOWNLOAD_LIBS is set to true, then skip this step
+if [ "$ALLOW_PROVISION_TO_DOWNLOAD_LIBS" = "true" ]; then
+    echo "Skipping decompressing required libs for Provision..."
+else
+    echo "Decompressing required libs for Provision..."
 
-# Create the target directory
-mkdir -p /root/.config/Provision
+    # Create the target directory
+    mkdir -p /root/.config/Provision
 
-# Detect the system architecture
-ARCH=$(uname -m)
+    # Check OVERRIDE_PROVISION_LIBS_ARCH otherwise detect the system architecture
+    ARCH=${OVERRIDE_PROVISION_LIBS_ARCH:-$(uname -m)}
 
-# in case of aarch64, map it to arm64-v8a
-if [ "$ARCH" = "aarch64" ]; then
-    ARCH="arm64-v8a"
+    # Map the architecture directly
+    ARCH_DIR="lib/${ARCH}"
+
+    # Extract the specific directory or fallback to x86_64
+    tar -xvf /altserver/lib.tar.xz -C /root/.config/Provision "$ARCH_DIR/" || tar -xvf /altserver/lib.tar.xz -C /root/.config/Provision "lib/x86_64/"
 fi
 
-# Map the architecture directly
-ARCH_DIR="lib/${ARCH}"
-
-# Extract the specific directory or fallback to x86_64
-tar -xvf /altserver/lib.tar.xz -C /root/.config/Provision "$ARCH_DIR/" || tar -xvf /altserver/lib.tar.xz -C /root/.config/Provision "lib/x86_64/"
-# --- COMMENT THIS BLOCK IF YOU'D RATHER HAVE ANISETTE PULL AND EXTRACT THE LIBS
 
 # Execute supervisord
 echo "Starting supervisord..."
