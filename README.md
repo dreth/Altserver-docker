@@ -71,7 +71,7 @@ or alternatively adding them in the `docker run` command before the image name:
 You can check for which architectures are available by checking the releases of each project:
 
 - [AltServer-Linux](https://github.com/NyaMisty/AltServer-Linux/releases)
-- [netmuxd](https://https://github.com/jkcoxson/netmuxd/releases)
+- [netmuxd](https://github.com/jkcoxson/netmuxd/releases)
 - [Provision](https://github.com/Dadoum/Provision/releases) (this is the anisette-server)
 - The libraries are pulled from the apple music android apk, so the only available options are `arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`
 
@@ -111,7 +111,7 @@ from the root of the repo.
 I authored this repo but I did NOT author the projects it depends on. In particular:
 
 - [AltServer-Linux](https://github.com/NyaMisty/AltServer-Linux)
-- [netmuxd](https://https://github.com/jkcoxson/netmuxd/)
+- [netmuxd](https://github.com/jkcoxson/netmuxd/)
 - [Provision](https://github.com/Dadoum/Provision/)
 - [Altstore](https://altstore.io)
 
