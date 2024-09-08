@@ -10,7 +10,7 @@ A dockerized version of [AltServer-Linux](https://github.com/NyaMisty/AltServer-
 
 ## Installation
 
-### Docker (if not installed already)
+### Installing Docker (if not installed already)
 
 #### Linux:
 ```shell
@@ -25,7 +25,7 @@ exit
 #### macOS:
 Install using [Docker Desktop](https://docs.docker.com/desktop/install/mac-install/).
 
-### Avahi
+### Installing Avahi on Host System
 
 #### Arch-based distros:
 ```shell
@@ -71,7 +71,7 @@ sudo systemctl stop usbmuxd
 sudo systemctl disable usbmuxd
 ```
 
-### Using Docker Compose (recommended)
+### Run Using Docker Compose (recommended)
 
 To start up the application, run the docker-compose stack:
 
@@ -79,7 +79,7 @@ To start up the application, run the docker-compose stack:
 docker compose up -d --build
 ```
 
-### Using `docker run`
+### Run Using `docker run`
 
 Just run `run.sh`, or manually in your terminal:
 
