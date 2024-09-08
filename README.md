@@ -41,6 +41,16 @@ sudo docker run -d \
   altserver-docker 
 ```
 
+## Install AltStore on iOS Device
+
+You can run this command to install AltStore to your device:
+
+```shell
+docker exec -it altserver /altserver/bin/AltServer -u "<UDID>" -a "<Apple ID>" -p "<Password>" /altserver/bin/AltStore.ipa
+```
+
+NOTE: Only tested with Docker running on Linux. YMMV when running Docker on other operating systems.
+
 ## Logs
 
 Logs will be stored in the directory where the container is ran inside `./logs`
