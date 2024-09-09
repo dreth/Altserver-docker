@@ -2,16 +2,74 @@
 
 A dockerized version of [AltServer-Linux](https://github.com/NyaMisty/AltServer-Linux) with Wi-Fi sync capability. 
 
-## Run the server
+## Requirements
 
-### prerequisites
+- Docker
+- Avahi running on host system
+- usbmuxd **NOT** running on host system
 
-The only dependency is docker, but it is important to note two things:
+## Installation
 
-- You might not be able to refresh apps if **usbmuxd** is running in the _host_ system, the docker guest already includes it and binds to the usb interface. Make sure your host system is **NOT** running it.
-- You might need to be running the **avahi-daemon** in the host system.
+### Installing Docker (if not installed already)
 
-### docker compose (recommended)
+#### Linux:
+Option 1 (preferred): [Docker Engine](https://docs.docker.com/engine/install/)
+
+Option 2: [Docker Desktop](https://docs.docker.com/desktop/install/linux-install/)
+
+#### Windows:
+[Install WSL2](https://docs.docker.com/desktop/wsl/) then use the Linux install instructions or install using [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/).
+
+#### macOS:
+Install using [Docker Desktop](https://docs.docker.com/desktop/install/mac-install/).
+
+### Installing Avahi on Host System
+
+#### Arch-based distros:
+```shell
+pacman -S avahi
+```
+
+#### Debian/Ubuntu-based distros:
+```shell
+apt install avahi-daemon
+```
+
+#### Fedora-based distros:
+```shell
+dnf install avahi
+```
+
+#### Enable and start the service using systemd:
+```shell
+sudo systemctl enable avahi-daemon
+sudo systemctl start avahi-daemon
+```
+
+### Removing usbmuxd from Host System
+
+#### Arch-based distros:
+```shell
+pacman -R usbmuxd
+```
+
+#### Debian/Ubuntu-based distros:
+```shell
+apt remove usbmuxd
+```
+
+#### Fedora-based distros:
+```shell
+dnf remove usbmuxd
+```
+
+#### Enable and start the service using systemd:
+```shell
+sudo systemctl stop usbmuxd
+sudo systemctl disable usbmuxd
+```
+
+### Run Using Docker Compose (recommended)
 
 To start up the application, run the docker-compose stack:
 
@@ -19,7 +77,7 @@ To start up the application, run the docker-compose stack:
 docker compose up -d --build
 ```
 
-### Using `docker run`
+### Run Using `docker run`
 
 Just run `run.sh`, or manually in your terminal:
 
