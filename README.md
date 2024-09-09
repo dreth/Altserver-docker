@@ -13,11 +13,8 @@ A dockerized version of [AltServer-Linux](https://github.com/NyaMisty/AltServer-
 ### Installing Docker (if not installed already)
 
 #### Linux:
-```shell
-curl -sSL https://get.docker.com | sh
-sudo usermod -aG docker $(whoami)
-exit
-```
+[Docker Engine (preferred)](https://docs.docker.com/engine/install/)
+[Docker Desktop](https://docs.docker.com/desktop/install/linux-install/)
 
 #### Windows:
 [Install WSL2](https://docs.docker.com/desktop/wsl/) then use the Linux install instructions or install using [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/).
