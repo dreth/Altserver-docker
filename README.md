@@ -13,7 +13,7 @@ A dockerized version of [AltServer-Linux](https://github.com/NyaMisty/AltServer-
 ### Installing Docker (if not installed already)
 
 #### Linux:
-Option 1: [Docker Engine (preferred)](https://docs.docker.com/engine/install/)
+Option 1 (preferred): [Docker Engine](https://docs.docker.com/engine/install/)
 
 Option 2: [Docker Desktop](https://docs.docker.com/desktop/install/linux-install/)
 
