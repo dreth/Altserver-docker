@@ -63,7 +63,7 @@ apt remove usbmuxd
 dnf remove usbmuxd
 ```
 
-#### Enable and start the service using systemd:
+#### Stop and disable the service using systemd:
 ```shell
 sudo systemctl stop usbmuxd
 sudo systemctl disable usbmuxd
