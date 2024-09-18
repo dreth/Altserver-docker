@@ -46,7 +46,13 @@ sudo systemctl enable avahi-daemon
 sudo systemctl start avahi-daemon
 ```
 
-### Removing usbmuxd from Host System
+### Stopping or removing usbmuxd from Host System
+
+#### Stop and disable the service using systemd:
+```shell
+sudo systemctl stop usbmuxd
+sudo systemctl disable usbmuxd
+```
 
 #### Arch-based distros:
 ```shell
@@ -63,11 +69,7 @@ apt remove usbmuxd
 dnf remove usbmuxd
 ```
 
-#### Stop and disable the service using systemd:
-```shell
-sudo systemctl stop usbmuxd
-sudo systemctl disable usbmuxd
-```
+
 
 ### Run Using Docker Compose (recommended)
 
