@@ -7,6 +7,7 @@ A dockerized version of [AltServer-Linux](https://github.com/NyaMisty/AltServer-
 - Docker
 - Avahi running on host system
 - usbmuxd **NOT** running on host system
+- Device UDID (can be found using [this guide](https://discussions.apple.com/thread/250783627))
 
 ## Installation
 
