@@ -7,7 +7,6 @@ A dockerized version of [AltServer-Linux](https://github.com/NyaMisty/AltServer-
 - Docker
 - Avahi running on host system
 - usbmuxd **NOT** running on host system
-- Device UDID (can be found using [this guide](https://discussions.apple.com/thread/250783627))
 
 ## Installation
 
@@ -104,7 +103,9 @@ sudo docker run -d \
 
 ## Install AltStore on iOS Device
 
-You can run this command to install AltStore to your device:
+1. Make sure you have your Device UDID (can be found using [this guide](https://discussions.apple.com/thread/250783627)).
+
+2. Run this command to install AltStore to your device:
 
 ```shell
 docker exec -it altserver /altserver/bin/AltServer -u "<UDID>" -a "<Apple ID>" -p "<Password>" /altserver/bin/AltStore.ipa
