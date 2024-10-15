@@ -2,9 +2,11 @@ version: '3.8'
 
 services:
   altserver:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    # Optional build configuration 
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    image: dreth/altserver-docker:latest
     container_name: altserver
     volumes:
       - "./lib:/root/.config/Provision/lib"
