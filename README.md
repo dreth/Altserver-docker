@@ -69,11 +69,15 @@ apt remove usbmuxd
 dnf remove usbmuxd
 ```
 
-
-
 ### Run Using Docker Compose (recommended)
 
-To start up the application, run the docker-compose stack:
+To start up the application, you can run:
+
+```shell
+docker compose up -d
+```
+
+Or optionally if you'd like to build it yourself, modify the docker-compose.yml, uncomment the build config and run the docker-compose stack with the optional build flag:
 
 ```shell
 docker compose up -d --build
