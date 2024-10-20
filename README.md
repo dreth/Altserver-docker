@@ -2,6 +2,8 @@
 
 A dockerized version of [AltServer-Linux](https://github.com/NyaMisty/AltServer-Linux) with Wi-Fi sync capability. 
 
+**NOTE:** I still keep track of this project as unfortunately it's the only way to have a reliable AltServer on Linux, however, as of iOS 18, it seems that _AltServer_ is not open source and the upstream repo that [AltServer-Linux tracks from](https://github.com/rileytestut/AltServer-Windows) is also unmaintained. Therefore, I would strongly recommend to switching to [SideStore](https://sidestore.io/), which _does not_ require an AltServer to run. Otherwise, your apps will likely become unverified over time. 
+
 ## Requirements
 
 - Docker
